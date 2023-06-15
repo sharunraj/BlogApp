@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body{
+            text-align: center;
+        }
+        .container{
+        display: inline-block;
+        width: 400px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 36px 48px 48px 48px;
+        background-color: rgba(152, 272, 218, 0.462);
+        border-radius: 11px;
+        box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+            
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <h2>
+                About the Student
+            </h2>
+            <h5>
+               Name: {{ Students.name}}
+            </h5>
+            <h5>
+                Address: {{Students.address}}
+            </h5>
+            <h5>
+                Course: {{Students.course}}
+            </h5>
+
+        </div>
+    </div>
+</body>
+</html>

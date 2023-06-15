@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+        }
+        .container{
+        display: inline-block;
+        width: 400px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 36px 48px 48px 48px;
+        background-color:rgba(152, 272, 218, 0.462);
+        border-radius: 11px;
+        box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+            
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>View Details</h1>
+    <div>
+        {% for s in Students %}
+        <div>
+            
+            <div>
+                <div class="container">
+                    <br>
+                    <h5>UserID: {{s.pk}}</h5>
+                    <h5>Name: {{s.name}}</h5>
+                    <a href="{% url 'getsinglestudents' s.pk %}">
+                        View Details
+                    </a>
+                    <br>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

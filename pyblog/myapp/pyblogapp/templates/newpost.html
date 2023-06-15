@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #bbbbbb;
+        top: 0;
+        width: 100%;
+      }
+      li {
+        display: inline;
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #595959;
+      }
+      .active {
+        background-color: #595959;
+      }
+      .container{
+        display: inline-block;
+        width: 400px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 36px 48px 48px 48px;
+        border-radius: 11px;
+        box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+      }
+
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/newpost" class="active">New Post</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <form action="/addpost" method="post">
+        {% csrf_token %}
+        <h1>Title</h1>
+        <input type="text" style="width: 25rem;" name="title" />
+        <h1>Description</h1>
+        <textarea name="description" style="width: 25rem;height: 10rem;"></textarea>
+        <h1>Author</h1>
+        <input type="text" style="width: 25rem;" name="name">
+        <br><br>
+        <button type="submit" style="background-color: #bbbbbb;color: white;border: #bbbbbb;width: 4rem;height: 2rem;border-radius: 6%;">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

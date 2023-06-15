@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #bbbbbb;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      li {
+        display: inline;
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #595959;
+      }
+      .active {
+        background-color: #595959;
+      }
+      .header {
+        margin-bottom: 4rem;
+      }
+      .container {
+       
+        display: inline-block;
+        width: 400px;
+        margin: auto;
+        margin-left: 3rem;
+        margin-top: 50px;
+        padding: 36px 48px 48px 48px;
+        border-radius: 11px;
+        box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+      }
+     
+      .title {
+        text-decoration: underline;
+      }
+
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <ul>
+        <li><a href="/home" class="active">Home</a></li>
+        <li><a href="/newpost">New Post</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </div>
+    <h1 style="font-size: 4rem">Blogs</h1>
+    <div class="">
+      {% for s in Blog %}
+      <div class="container">
+        <div class="hero-image">
+            <div class="txt">
+          <br />
+          <h1 class="title">{{s.title}}</h1>
+          <p class="para">{{s.description}}</p>
+          <h5 class="name">{{s.name}}</h5>
+          <button style="">
+            <a
+              style="text-decoration: none;"
+              href="{% url 'delete_project' s.pk %}"
+              >Delete</a
+            >
+            </button>
+          <br />
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </body>
+</html>
